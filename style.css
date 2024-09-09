@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #f44336;
+}
+body {
+    margin: 0;
+    background-color: #EEE;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+h1 {
+    background-color: white;
+    padding: 15px;
+    margin: 0 0 40px;
+    text-align: center;
+    color: var(--primary-color);
+}
+.guess-game {
+    text-align: center;
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .game-area {
+        .inputs {
+            > div {
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    font-size: 20px;
+                    margin-right: 10px;
+                    font-weight: bold;
+                }
+            }
+            .disabled-input {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+            input {
+                margin: 0 5px;
+                width: 50px;
+                height: 50px;
+                font-size: 40px;
+                background-color: white;
+                text-align: center;
+                border: none;
+                border-bottom: 3px solid #333;
+                caret-color: var(--primary-color);
+                &:focus {
+                    outline-color: #ccc;
+                }
+                &.in-place {
+                    background-color: #f89e13;
+                    border: #f89e13;
+                    color: white;
+                }
+                &.not-in-place {
+                    background-color: #18ba89;
+                    border: #18ba89;
+                    color: white;
+                }
+                &.no {
+                    background-color: #27303f;
+                    border: #27303f;
+                    color: white;
+                }
+            }
+        }
+        .control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            margin: 25px auto;
+            gap: 10px;
+            .check {
+                flex: 1;
+                background-color: var(--primary-color);
+                &:disabled {
+                    cursor:default;
+                }
+            }
+            .hint {
+                background-color: #009688;
+                width: fit-content;
+                &:disabled {
+                    cursor: default;
+                }
+            }
+            button {
+                border: none;
+                border-radius: 6px;
+                padding: 10px 20px;
+                cursor: pointer;
+                color: white;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            button:disabled {
+                background-color: black;
+                opacity: 0.4;
+                cursor: default;
+            }
+        }
+    }
+    .key-colors {
+        .key-color {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: white;
+            .key {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                &.in-place {
+                    background-color: #f89e13;
+                }
+                &.not-in-place {
+                    background-color: #18ba89;
+                }
+                &.no {
+                    background-color: #27303f;
+                }
+            }
+            .key-txt {
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
+    }
+}
+.message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    span {
+      font-weight: bold;
+      display: block;
+      font-size: 50px;
+      color: var(--primary-color);
+      text-transform: capitalize;
+      margin-top: 10px;
+    }
+    p {
+      margin-top: 15px;
+    }
+}
+footer {
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+}
+.play-again {
+    font-size: 25px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 18px;
+    border-radius: 6px;
+    width: 50%;
+    margin: 10px auto;
+    cursor: pointer;
+    display: none;
+}
+
+footer span {
+    color: var(--primary-color);
+}
